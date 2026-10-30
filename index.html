@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghost of Rates Past</title>
+<meta name="description" content="Your old mortgage rate comes back to warn you before renewal. Runs an open-weight model in your browser. Nothing leaves your device.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👻</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>👻 Ghost of Rates Past</h1>
+  <p class="lede">Lots of Canadians locked in a low rate in 2020 or 2021 and are renewing now. Your old rate has something to tell you before you sign.</p>
+
+  <form id="form">
+    <label>Month you signed your 5-year fixed <input id="signed" type="month" value="2021-03" min="2016-01" max="2026-10" required></label>
+    <label>Original mortgage amount ($) <input id="principal" type="number" value="500000" min="10000" step="1000" required></label>
+    <label>Your old rate (%) <input id="oldRate" type="number" value="1.89" min="0" max="15" step="0.01" required></label>
+    <label>Renewal rate you've been offered (%) <input id="newRate" type="number" value="4.39" min="0" max="15" step="0.01" required></label>
+    <label>Original amortization (years) <input id="amort" type="number" value="25" min="6" max="30" required></label>
+    <label class="check"><input id="useModel" type="checkbox" checked> Let the ghost write the letter (runs Gemma 3 1B on this device)</label>
+    <button type="submit">Summon</button>
+  </form>
+
+  <section id="result" hidden>
+    <h2>The numbers (these are the only truth)</h2>
+    <table id="numbers"></table>
+    <p id="echo" class="small"></p>
+    <h2>A letter from your old rate</h2>
+    <p id="status" class="small"></p>
+    <blockquote id="letter"></blockquote>
+  </section>
+
+  <footer class="small">
+    Educational only, not financial advice. Assumes a 5-year fixed term, monthly payments and semi-annual compounding.
+    Rate history: <a href="https://www.bankofcanada.ca/valet/observations/V80691335/json">Bank of Canada, series V80691335</a>.
+    Model: <a href="https://huggingface.co/onnx-community/gemma-3-1b-it-ONNX">Gemma 3 1B (ONNX)</a> via <a href="https://github.com/huggingface/transformers.js">Transformers.js</a>.
+    Made in Toronto, Ontario by John Khan · <a href="https://github.com/ALENZACODES/ghost-of-rates-past">code</a>
+  </footer>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>

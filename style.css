@@ -1,0 +1,20 @@
+:root { --bg:#0f0d14; --fg:#e9e4f0; --dim:#9a92a8; --ghost:#b9f3e4; --marigold:#f5a524; }
+* { box-sizing: border-box; }
+body { margin:0; background: radial-gradient(circle at 50% -10%, #2a2140, var(--bg) 60%); color:var(--fg); font: 16px/1.55 system-ui, sans-serif; }
+main { max-width: 640px; margin: 0 auto; padding: 32px 20px 60px; }
+h1 { color: var(--ghost); margin: 0 0 8px; text-shadow: 0 0 18px #b9f3e455; }
+h2 { color: var(--marigold); font-size: 1.05rem; margin-top: 28px; }
+.lede { color: var(--dim); }
+form { display: grid; gap: 12px; margin-top: 20px; }
+label { display: grid; gap: 4px; font-size: .92rem; }
+label.check { display: flex; gap: 8px; align-items: center; }
+input[type=number], input[type=month] { background:#1b1724; color:var(--fg); border:1px solid #3a3250; border-radius:8px; padding:10px; font-size:1rem; }
+button { background: var(--ghost); color:#10201b; border:0; border-radius:8px; padding:12px; font-weight:700; font-size:1rem; cursor:pointer; }
+table { width:100%; border-collapse: collapse; }
+th, td { text-align:left; padding:6px 4px; border-bottom:1px solid #2c2540; font-weight:400; }
+td { text-align:right; font-variant-numeric: tabular-nums; }
+tr.shock td, tr.shock th { color: var(--marigold); font-weight:700; }
+blockquote { white-space: pre-wrap; margin:0; padding:16px 18px; border-left:3px solid var(--ghost); background:#17131f; border-radius:0 8px 8px 0; font-family: Georgia, serif; animation: fade 1.2s ease; }
+@keyframes fade { from { opacity:0; filter: blur(3px);} to { opacity:1; filter:none; } }
+.small { color: var(--dim); font-size: .85rem; }
+a { color: var(--ghost); }
